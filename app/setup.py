@@ -1,13 +1,13 @@
 from configuraciones import *
 import psycopg2
-conn = psycopg2.connect("dbname=%s user=%s password=%s"%(database,user,passwd))
+conn = psycopg2.connect("host=%s dbname=%s user=%s password=%s"%(host,database,user,passwd))
 
 
 cur = conn.cursor()
-sql ="""DROP SCHEMA public CASCADE;
-CREATE SCHEMA public;"""
+# sql ="""DROP SCHEMA public CASCADE;
+# CREATE SCHEMA public;"""
 
-cur.execute(sql)
+# cur.execute(sql)
 
 sql ="""
 CREATE TABLE posts 

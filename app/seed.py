@@ -1,6 +1,6 @@
 from configuraciones import *
 import psycopg2
-conn = psycopg2.connect("dbname=%s user=%s password=%s"%(database,user,passwd))
+conn = psycopg2.connect("host=%s dbname=%s user=%s password=%s"%(host,database,user,passwd))
 cur = conn.cursor()
 
 sql ="""
@@ -16,7 +16,7 @@ cur.execute(sql)
 conn.commit()
 post_id = cur.fetchone()[0]
 
-print post_id
+print(post_id)
 
 
 sql ="""insert INTO categorias_posts (categoria_id,post_id)
